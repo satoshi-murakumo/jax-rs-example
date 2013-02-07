@@ -1,7 +1,7 @@
 /**
  *
  */
-package example.service;
+package example.controller.service;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -41,19 +41,19 @@ public class HelloWorldService {
 
         Thread t = new Thread()
         {
-           @Override
-           public void run()
-           {
-              try
-              {
-                 Response jaxrs = Response.ok("(message)").type(MediaType.TEXT_PLAIN).build();
-                 response.setResponse(jaxrs);
-              }
-              catch (Exception e)
-              {
-                 e.printStackTrace();
-              }
-           }
+            @Override
+            public void run()
+            {
+                try
+                {
+                    Response jaxrs = Response.ok("(message)").type(MediaType.TEXT_PLAIN).build();
+                    response.setResponse(jaxrs);
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
         };
         t.start();
     }

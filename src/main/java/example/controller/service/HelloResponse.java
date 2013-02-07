@@ -1,4 +1,4 @@
-package example.service;
+package example.controller.service;
 
 import javax.xml.bind.annotation.XmlRootElement;
 

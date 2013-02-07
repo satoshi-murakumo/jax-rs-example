@@ -14,7 +14,7 @@
 
   <context-param>
     <param-name>resteasy.guice.modules</param-name>
-    <param-value>example.ApplicationDependency</param-value>
+    <param-value>examplemodule.ApplicationModule</param-value>
   </context-param>
 
   <context-param>
@@ -34,6 +34,7 @@
   <servlet>
     <servlet-name>Resteasy</servlet-name>
     <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServlet30Dispatcher</servlet-class>
+    <async-supported>true</async-supported>
   </servlet>
 
   <servlet-mapping>
