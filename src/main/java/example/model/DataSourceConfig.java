@@ -43,7 +43,7 @@ public class DataSourceConfig extends DomaAbstractConfig {
             prop.setProperty("ConnectionCachingEnabled", "true");
 
             oraSource.setConnectionProperties(prop);
-            oraSource.setURL("jdbc:oracle:thin:@tnsmaga");
+            oraSource.setURL("jdbc:oracle:thin:@localhost:1521:xe");
             oraSource.setUser("user04");
             oraSource.setPassword("password");
 

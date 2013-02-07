@@ -14,7 +14,7 @@
 
   <context-param>
     <param-name>resteasy.guice.modules</param-name>
-    <param-value>examplemodule.ApplicationModule</param-value>
+    <param-value>example.module.ApplicationModule</param-value>
   </context-param>
 
   <context-param>

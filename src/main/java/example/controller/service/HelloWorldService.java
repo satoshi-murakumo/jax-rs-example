@@ -16,6 +16,8 @@ import org.jboss.resteasy.spi.AsynchronousResponse;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
+import example.controller.response.HelloResponse;
+
 @Path("/hello")
 public class HelloWorldService {
 

@@ -19,7 +19,7 @@
 
     <path id="classpath">
         <fileset dir="lib"/>
-        <fileset dir="${projectDir}/lib"/>
+        <fileset dir="${projectDir}/repo/com/oracle/ojdbc6/11.2.0.3.0/"/>
     </path>
 
     <taskdef name="gen" classname="org.seasar.doma.extension.gen.task.Gen" classpathref="classpath" loaderref="loader"/>
