@@ -6,3 +6,5 @@ select
   VERSION_NO
 from
   EMPLOYEE
+order by
+  EMPLOYEE_ID

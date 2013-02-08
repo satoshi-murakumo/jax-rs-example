@@ -1,14 +1,11 @@
 package example.model;
 
-import java.sql.SQLException;
-import java.util.Properties;
-
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-import oracle.jdbc.pool.OracleConnectionPoolDataSource;
-
 import org.seasar.doma.jdbc.DomaAbstractConfig;
-import org.seasar.doma.jdbc.SimpleDataSource;
 import org.seasar.doma.jdbc.dialect.Dialect;
 import org.seasar.doma.jdbc.dialect.OracleDialect;
 import org.seasar.doma.jdbc.tx.KeepAliveLocalTransaction;
@@ -35,27 +32,12 @@ public class DataSourceConfig extends DomaAbstractConfig {
 
     protected static DataSource createDataSource() {
         try {
-            OracleConnectionPoolDataSource oraSource = new OracleConnectionPoolDataSource();
-
-            Properties prop = new Properties();
-            prop.setProperty("MinLimit", "5");
-            prop.setProperty("MaxLimit", "20");
-            prop.setProperty("ConnectionCachingEnabled", "true");
-
-            oraSource.setConnectionProperties(prop);
-            oraSource.setURL("jdbc:oracle:thin:@localhost:1521:xe");
-            oraSource.setUser("user04");
-            oraSource.setPassword("password");
-
-            return oraSource;
-        } catch (SQLException e) {
-            e.printStackTrace();
-
-            SimpleDataSource dataSource = new SimpleDataSource();
-            dataSource.setUrl("jdbc:oracle:thin:@tnsmaga");
-            dataSource.setUser("user01");
-            dataSource.setPassword("password");
-            return dataSource;
+            Context initContext = new InitialContext();
+            Context envContext = (Context) initContext.lookup("java:/comp/env");
+            DataSource ds = (DataSource) envContext.lookup("jdbc/oracle");
+            return ds;
+        } catch (NamingException ne) {
+            throw new RuntimeException(ne);
         }
     }
 
@@ -75,6 +57,5 @@ public class DataSourceConfig extends DomaAbstractConfig {
     public static DataSource getOriginalDataSource() {
         return originalDataSource;
     }
-
 
 }
