@@ -2,11 +2,8 @@
     <wb-module deploy-name="jax-rs-example">
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/apt"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/apt-test"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/jax-rs-example/WEB-INF/classes"/>
         <property name="context-root" value="jax-rs-example"/>
         <property name="java-output-path" value="/jax-rs-example/target/classes"/>
     </wb-module>

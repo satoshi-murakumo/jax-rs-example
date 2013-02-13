@@ -1,4 +1,43 @@
 <factorypath>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/jboss/resteasy/resteasy-jaxrs/2.3.5.Final/resteasy-jaxrs-2.3.5.Final.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/jboss/resteasy/jaxrs-api/2.3.5.Final/jaxrs-api-2.3.5.Final.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/scannotation/scannotation/1.0.3/scannotation-1.0.3.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/javassist/javassist/3.12.1.GA/javassist-3.12.1.GA.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/javax/activation/activation/1.1/activation-1.1.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/commons-codec/commons-codec/1.2/commons-codec-1.2.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/httpcomponents/httpclient/4.1.2/httpclient-4.1.2.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/httpcomponents/httpcore/4.1.2/httpcore-4.1.2.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/commons-io/commons-io/1.4/commons-io-1.4.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/jboss/resteasy/resteasy-jaxb-provider/2.3.5.Final/resteasy-jaxb-provider-2.3.5.Final.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/sun/xml/bind/jaxb-impl/2.2.4/jaxb-impl-2.2.4.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/javax/xml/bind/jaxb-api/2.2.3/jaxb-api-2.2.3.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/jboss/resteasy/resteasy-jettison-provider/2.3.5.Final/resteasy-jettison-provider-2.3.5.Final.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/codehaus/jettison/jettison/1.3.1/jettison-1.3.1.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/jboss/resteasy/resteasy-multipart-provider/2.3.5.Final/resteasy-multipart-provider-2.3.5.Final.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/javax/mail/mail/1.4.4/mail-1.4.4.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/james/apache-mime4j/0.6/apache-mime4j-0.6.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/jboss/resteasy/resteasy-cache-core/2.3.5.Final/resteasy-cache-core-2.3.5.Final.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/jboss/cache/jbosscache-core/3.2.5.GA/jbosscache-core-3.2.5.GA.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/jgroups/jgroups/2.6.13.GA/jgroups-2.6.13.GA.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/jboss/javaee/jboss-transaction-api/1.0.1.GA/jboss-transaction-api-1.0.1.GA.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/jboss/jboss-common-core/2.2.14.GA/jboss-common-core-2.2.14.GA.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/jboss/logging/jboss-logging-spi/2.0.5.GA/jboss-logging-spi-2.0.5.GA.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/jboss/resteasy/async-http-servlet-3.0/2.3.5.Final/async-http-servlet-3.0-2.3.5.Final.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/jboss/resteasy/resteasy-guice/2.3.5.Final/resteasy-guice-2.3.5.Final.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/google/inject/guice/3.0/guice-3.0.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/javax/inject/javax.inject/1/javax.inject-1.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/aopalliance/aopalliance/1.0/aopalliance-1.0.jar" enabled="false" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/seasar/doma/doma/1.28.0/doma-1.28.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/seasar/extension/s2-extension/2.4.46/s2-extension-2.4.46.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/seasar/container/s2-framework/2.4.46/s2-framework-2.4.46.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/jboss/javassist/3.4.ga/javassist-3.4.ga.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/ognl/ognl/2.6.9-patch-20090427/ognl-2.6.9-patch-20090427.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/poi/poi/3.0-FINAL/poi-3.0-FINAL.jar" enabled="false" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/oracle/ojdbc6/11.2.0.3.0/ojdbc6-11.2.0.3.0.jar" enabled="false" runInBatchMode="false"/>
     <factorypathentry kind="PLUGIN" id="org.eclipse.jst.ws.annotations.core" enabled="false" runInBatchMode="false"/>
 </factorypath>

@@ -2,6 +2,7 @@ package example.controller.service;
 
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -10,13 +11,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.seasar.doma.jdbc.tx.LocalTransaction;
-
-import com.google.inject.Inject;
-
 import example.controller.request.EmployeeRequest;
 import example.controller.response.EmployeeListResponse;
-import example.model.DataSourceConfig;
 import example.model.dao.EmployeeDao;
 import example.model.data.Employee;
 
@@ -34,22 +30,14 @@ public class EmployeeService {
     @Path("/")
     @Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
     public EmployeeListResponse get() {
-
-        LocalTransaction tx = DataSourceConfig.getLocalTransaction();
-        try {
-            tx.begin();
-            List<Employee> list = employeeDao.selectAll();
-            return EmployeeListResponse.from(list);
-        } finally {
-            tx.rollback();
-        }
+        List<Employee> list = employeeDao.selectAll();
+        return EmployeeListResponse.from(list);
     }
 
     @POST
     @Path("/")
     @Consumes({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
     public Response post(EmployeeRequest request) {
-        System.out.println(request.employeeName);
         return Response.ok().build();
     }
 }

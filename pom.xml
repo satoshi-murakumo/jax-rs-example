@@ -14,6 +14,11 @@
 
   <repositories>
     <repository>
+      <id>local</id>
+      <name>Local Repository</name>
+      <url>file:${basedir}/repo</url>
+    </repository>
+    <repository>
       <id>jboss-releases</id>
       <name>JBoss Releases</name>
       <url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
@@ -23,15 +28,9 @@
       <name>The Seasar Foundation Maven2 Repository</name>
       <url>http://maven.seasar.org/maven2</url>
     </repository>
-    <repository>
-      <id>local</id>
-      <name>Local Repository</name>
-      <url>file:${basedir}/repo</url>
-    </repository>
   </repositories>
 
   <dependencies>
-
     <!-- RESTEasy dependencies -->
     <!-- core library -->
     <dependency>
@@ -101,11 +100,18 @@
       <artifactId>doma</artifactId>
       <version>1.28.0</version>
     </dependency>
+    <!-- Seaser Extension
+        for s2datasource, s2dbcp, s2jta -->
+    <dependency>
+      <groupId>org.seasar.extension</groupId>
+      <artifactId>s2-extension</artifactId>
+      <version>2.4.46</version>
+    </dependency>
 
     <dependency>
-        <groupId>com.oracle</groupId>
-        <artifactId>ojdbc6</artifactId>
-        <version>11.2.0.3.0</version>
+      <groupId>com.oracle</groupId>
+      <artifactId>ojdbc6</artifactId>
+      <version>11.2.0.3.0</version>
     </dependency>
 
     <!-- For testing purposes -->
@@ -157,20 +163,6 @@
               <goal>process</goal>
             </goals>
             <phase>process-resources</phase>
-          </execution>
-        </executions>
-      </plugin>
-      <!-- Run annotation processors on src/test/java sources -->
-      <plugin>
-        <groupId>org.bsc.maven</groupId>
-        <artifactId>maven-processor-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>process-test</id>
-            <goals>
-              <goal>process-test</goal>
-            </goals>
-            <phase>process-test-resources</phase>
           </execution>
         </executions>
       </plugin>

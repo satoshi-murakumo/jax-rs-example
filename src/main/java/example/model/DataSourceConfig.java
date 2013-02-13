@@ -1,28 +1,53 @@
 package example.model;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.sql.DataSource;
+import javax.transaction.TransactionManager;
+import javax.transaction.UserTransaction;
 
 import org.seasar.doma.jdbc.DomaAbstractConfig;
 import org.seasar.doma.jdbc.dialect.Dialect;
 import org.seasar.doma.jdbc.dialect.OracleDialect;
-import org.seasar.doma.jdbc.tx.KeepAliveLocalTransaction;
-import org.seasar.doma.jdbc.tx.LocalTransaction;
-import org.seasar.doma.jdbc.tx.LocalTransactionalDataSource;
+import org.seasar.extension.dbcp.impl.ConnectionPoolImpl;
+import org.seasar.extension.dbcp.impl.DataSourceImpl;
+import org.seasar.extension.dbcp.impl.XADataSourceImpl;
+import org.seasar.extension.jta.TransactionManagerImpl;
+import org.seasar.extension.jta.UserTransactionImpl;
 
 public class DataSourceConfig extends DomaAbstractConfig {
 
-    private static final DataSource originalDataSource = createDataSource();
+    protected static OracleDialect dialect;
 
-    private static final LocalTransactionalDataSource localTxDataSource = createLocalTxDataSource();
+    protected static UserTransaction ut;
+    protected static TransactionManager tm;
+    protected static XADataSourceImpl xads;
+    protected static ConnectionPoolImpl pool;
+    protected static DataSourceImpl ds;
 
-    private static final Dialect dialect = new OracleDialect();
+    static {
+        dialect = new OracleDialect();
+
+        tm = new TransactionManagerImpl();
+        ut = new UserTransactionImpl(tm);
+
+        xads = new XADataSourceImpl();
+        xads.setDriverClassName("oracle.jdbc.OracleDriver");
+        xads.setURL("jdbc:oracle:thin:@127.0.0.1:1521:xe");
+        xads.setUser("user04");
+        xads.setPassword("password");
+
+        pool = new ConnectionPoolImpl();
+        pool.setTransactionManager(tm);
+        pool.setXADataSource(xads);
+        pool.setMaxPoolSize(30);
+        pool.setAllowLocalTx(true);
+
+        ds = new DataSourceImpl(pool);
+    }
+
 
     @Override
     public DataSource getDataSource() {
-        return localTxDataSource;
+        return ds;
     }
 
     @Override
@@ -30,32 +55,7 @@ public class DataSourceConfig extends DomaAbstractConfig {
         return dialect;
     }
 
-    protected static DataSource createDataSource() {
-        try {
-            Context initContext = new InitialContext();
-            Context envContext = (Context) initContext.lookup("java:/comp/env");
-            DataSource ds = (DataSource) envContext.lookup("jdbc/oracle");
-            return ds;
-        } catch (NamingException ne) {
-            throw new RuntimeException(ne);
-        }
+    public static UserTransaction getTransaction() {
+        return ut;
     }
-
-    protected static LocalTransactionalDataSource createLocalTxDataSource() {
-        return new LocalTransactionalDataSource(originalDataSource);
-    }
-
-    public static LocalTransaction getLocalTransaction() {
-        return localTxDataSource.getLocalTransaction(defaultJdbcLogger);
-    }
-
-    public static KeepAliveLocalTransaction getKeepAliveLocalTransaction() {
-        return localTxDataSource
-                .getKeepAliveLocalTransaction(defaultJdbcLogger);
-    }
-
-    public static DataSource getOriginalDataSource() {
-        return originalDataSource;
-    }
-
 }
